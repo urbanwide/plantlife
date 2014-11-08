@@ -2,7 +2,7 @@ class CreatePlants < ActiveRecord::Migration
   def change
     create_table :plants do |t|
       t.integer :height
-      t.boolen :alive
+      t.boolean :alive
       t.string :token
       t.string :name
       t.date :birthdate
