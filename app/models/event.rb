@@ -11,6 +11,7 @@ class Event < ActiveRecord::Base
   before_validation :set_token, :set_key, :on => :create
 
   has_many :attempts
+  has_many :plants
 
   validates_presence_of :token, :key
   validates_uniqueness_of :token, :key
