@@ -2,7 +2,6 @@ class Plant < ActiveRecord::Base
 
   # height, alive, token, name, startdate, email, event_id
 
-
   belongs_to :event
   attr_accessible :height, :alive, :token, :name, :startdate, :email, :event_id
 
