@@ -13,4 +13,9 @@ class PlantsController < ApplicationController
     end
   end
 
+  protected
+  def assert_event
+    @event = Event.find(params[:event_id])
+  end
+
 end
