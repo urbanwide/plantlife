@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141109090942) do
+ActiveRecord::Schema.define(:version => 20141111115505) do
 
   create_table "attempts", :id => false, :force => true do |t|
     t.string   "token",        :limit => 5
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20141109090942) do
     t.boolean  "alive"
     t.string   "token"
     t.string   "name"
-    t.date     "startdate"
+    t.datetime "startdate"
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
