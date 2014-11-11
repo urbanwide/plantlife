@@ -6,9 +6,10 @@ class Plant < ActiveRecord::Base
   set_primary_key :token
   validates_uniqueness_of :token
 
-  attr_accessible :height, :alive, :token, :name, :startdate, :email, :event_id
+  attr_accessible :height, :alive, :token, :name, :startdate, :startdate_unix, :email, :event_id
 
   validates_presence_of :token, :event_id, :height, :name, :startdate
+
   validates :name, :presence => true,
                    :length => {:minimum => 3, :maximum => 254}
 
@@ -21,6 +22,10 @@ class Plant < ActiveRecord::Base
 
   def as_json(options)
     super(:only => [:height, :alive, :token, :name, :startdate, :email, :event_id, :created_at])
+  end
+
+  def startdate_unix= date
+    self.startdate= Time.at(date.to_i)
   end
 
   protected
