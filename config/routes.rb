@@ -24,8 +24,7 @@ Maze::Application.routes.draw do
         post 'retrieve'
       end
     end
-    resources :plants do
-    end
+    resources :plants, defaults: {format: :json}
   end
 
   # The priority is based upon order of creation:
