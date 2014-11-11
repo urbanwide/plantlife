@@ -1,6 +1,6 @@
 class CreatePlants < ActiveRecord::Migration
   def change
-    create_table :plants do |t|
+    create_table :plants, {:id => false} do |t|
       t.integer :height
       t.boolean :alive
       t.string :token

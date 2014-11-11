@@ -3,7 +3,7 @@ class Plant < ActiveRecord::Base
   belongs_to :event
 
   # height, alive, token, name, startdate, email, event_id
-  set_primary_key 'token'
+  set_primary_key :token
   validates_uniqueness_of :token
 
   attr_accessible :height, :alive, :token, :name, :startdate, :email, :event_id

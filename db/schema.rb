@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(:version => 20141111115505) do
     t.string   "twitter_account"
   end
 
-  create_table "plants", :force => true do |t|
+  create_table "plants", :id => false, :force => true do |t|
     t.integer  "height"
     t.boolean  "alive"
     t.string   "token"
