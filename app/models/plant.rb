@@ -12,18 +12,18 @@ class Plant < ActiveRecord::Base
   validates :name, :presence => true,
                    :length => {:minimum => 3, :maximum => 254}
 
-  validates :email, :presence => true,
+  validates :email, :allow_blank => true,
                     :length => {:minimum => 3, :maximum => 254},
                     :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
 
 
- before_save :default_values
+  before_save :default_values
 
- def as_json(options)
-   super(:only => [:height, :alive, :token, :name, :startdate, :email, :event_id, :created_at])
- end
+  def as_json(options)
+    super(:only => [:height, :alive, :token, :name, :startdate, :email, :event_id, :created_at])
+  end
 
- protected
+  protected
 
   def default_values
     self.alive ||= false
