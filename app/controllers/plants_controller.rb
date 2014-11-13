@@ -17,6 +17,20 @@ class PlantsController < ApplicationController
     respond_with(@event, @plant, :include => [:token])
   end
 
+  # 24 Sunflowers Raised - Best was 128cm - Average was 3cm
+
+  def counter
+    render :text => @event.plants.count
+  end
+
+  def tallest
+    render :text => @event.plants.maximum(:height)
+  end
+
+  def average
+    render :text => @event.plants.average(:height).round
+  end
+
   protected
 
   def assert_event

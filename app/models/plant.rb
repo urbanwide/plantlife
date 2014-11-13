@@ -8,15 +8,11 @@ class Plant < ActiveRecord::Base
 
   attr_accessible :height, :alive, :token, :name, :startdate, :startdate_unix, :email, :event_id
 
-  validates_presence_of :token, :event_id, :height, :name, :startdate
+  validates_presence_of :token, :event_id, :startdate
 
-  validates :name, :presence => true,
-                   :length => {:minimum => 3, :maximum => 254}
-
-  validates :email, :allow_blank => true,
-                    :length => {:minimum => 3, :maximum => 254},
-                    :format => {:with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i}
-
+  validates :name, presence: true, length: { minimum: 3, maximum: 254 } 
+  validates :email, allow_blank: true, length: { minimum: 3, maximum: 254 }, format: { with: /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
+  validates :height, presence: true, numericality: { only_integer: true }
 
   before_save :default_values
 

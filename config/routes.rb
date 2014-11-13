@@ -24,7 +24,13 @@ Maze::Application.routes.draw do
         post 'retrieve'
       end
     end
-    resources :plants, defaults: {format: :json}
+    resources :plants, defaults: {format: :json} do
+      collection do
+        get 'counter'
+        get 'average'
+        get 'tallest'
+      end
+    end
   end
 
   # The priority is based upon order of creation:

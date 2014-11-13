@@ -7,7 +7,10 @@ class EventsController < ApplicationController
   end
 
   def dashboard
-    @count = @event.attempts.find(:all, :conditions => ['completed_at IS NOT NULL']).count
+    @count = @event.plants.count
+    @average = @event.plants.average(:height).round
+    @tallest = @event.plants.maximum(:height)
+
     render :template => 'events/dashboard', :layout => 'dashboard'
   end
 
