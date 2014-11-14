@@ -23,6 +23,7 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 gem 'rack-cors', :require => 'rack/cors'
+gem 'obscenity'
 
 group :development, :test do
   gem 'sqlite3'
