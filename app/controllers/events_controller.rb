@@ -8,8 +8,6 @@ class EventsController < ApplicationController
 
   def dashboard
     @count = @event.plants.count
-    @average = @event.plants.average(:height).round
-    @tallest = @event.plants.maximum(:height)
     @top_3 = @event.plants.order('height desc').limit(3)
 
     render :template => 'events/dashboard', :layout => 'dashboard'
