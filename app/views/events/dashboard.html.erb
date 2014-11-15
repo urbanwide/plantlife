@@ -1,14 +1,14 @@
 <%= render :partial => '/shared/flash' , :locals => {:flash => flash} %>
 
 <div class="container-fluid">
-  <div class="col-md-4">
+  <div class="col-md-5">
     <% unless @event.twitter_account.blank? %>
       <h4><span class="glyphicon glyphicon-user"></span> Tweets by @otleyscience</h4>
-      <a class="twitter-timeline" width="300" height="600" data-dnt="true" href="https://twitter.com/<%=h @event.twitter_account %>" data-widget-id="529013524039622656" data-chrome="nofooter noheader noscrollbar">Tweets by <%=h @event.twitter_account %></a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <a class="twitter-timeline" width="400" height="600" data-dnt="true" href="https://twitter.com/<%=h @event.twitter_account %>" data-widget-id="529013524039622656" data-chrome="nofooter noheader noscrollbar" data-theme="light">Tweets by <%=h @event.twitter_account %></a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://plantlife.herokuapp.com/twitter-widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     <% end %>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-7">
     &nbsp;
     <div class="media">
       <div class="media-body">
